@@ -16,6 +16,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme
@@ -57,8 +58,9 @@ fun MealsCategoriesScreen(navController: NavController) {
         horizontalAlignment = Alignment.CenterHorizontally) {
 
 
+
         Text(
-            text = "Categorias de Comidas Deliciosas",
+            text = "Food Category Screen",
             modifier = Modifier.padding(2.dp),
 
             style = MaterialTheme.typography.headlineLarge,

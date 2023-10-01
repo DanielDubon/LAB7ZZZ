@@ -8,6 +8,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -16,6 +17,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -60,6 +62,12 @@ fun MealsInCategoryScreen(categoryId: String, navController: NavController) {
     Column( modifier = Modifier.fillMaxWidth().background(Color.Black),
         horizontalAlignment = Alignment.CenterHorizontally) {
 
+        Button(
+            modifier = Modifier.fillMaxWidth().padding(8.dp),
+            onClick = { navController.navigate("Home") }) {
+            androidx.compose.material3.Text(text = "Back")
+
+        }
 
         Text(
             text = "Categoria de $categoryId",

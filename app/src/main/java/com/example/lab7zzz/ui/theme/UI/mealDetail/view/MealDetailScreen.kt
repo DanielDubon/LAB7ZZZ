@@ -5,9 +5,11 @@ package com.example.lab7zzz.ui.theme.UI.mealDetail.view
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -23,11 +25,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import coil.compose.rememberImagePainter
 
 
 @Composable
-fun MealDetailScreen(mealId: String) {
+fun MealDetailScreen(mealId: String, navController: NavController) {
 
     val viewModel: MealDetailViewModel = viewModel()
 
@@ -44,7 +47,10 @@ fun MealDetailScreen(mealId: String) {
         .fillMaxWidth()
         .background(Color.Black),
         horizontalAlignment = Alignment.CenterHorizontally) {
-
+        Button(modifier = Modifier.fillMaxWidth().padding(8.dp),
+            onClick = { navController.navigate("Category/${mealDetail!!.meals?.first()?.strCategory}") }) {
+            Text(text = "Back")
+        }
         if (mealDetail != null) {
 
             Text(

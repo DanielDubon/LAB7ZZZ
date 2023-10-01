@@ -37,7 +37,7 @@ fun Navigation(modifier: Modifier = Modifier) {
         composable(route = "${NavigationState.Detail.route}/{mealId}") { backStackEntry ->
             val mealId = backStackEntry.arguments?.getString("mealId")
             if (mealId != null) {
-                MealDetailScreen(mealId)
+                MealDetailScreen(mealId, navController)
             }
 
     }
